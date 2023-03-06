@@ -1,0 +1,24 @@
+2023-03-05 22:05:47,979 - exc_logger - ERROR - exception in divideByZero
+=============
+Traceback (most recent call last):
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 35, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 48, in divideByZero
+    return 12/0
+ZeroDivisionError: division by zero
+2023-03-05 22:06:29,281 - exc_logger - ERROR - exception in divideByZero
+=============
+Traceback (most recent call last):
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 35, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 48, in divideByZero
+    return 12/0
+ZeroDivisionError: division by zero
+2023-03-05 22:06:50,768 - exc_logger - ERROR - exception in divideByZero
+=============
+Traceback (most recent call last):
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 35, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mac/data/software_design_in_python/python_exception_handing/logging-decorator.py", line 48, in divideByZero
+    return 12/0
+ZeroDivisionError: division by zero
