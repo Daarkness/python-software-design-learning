@@ -47,4 +47,51 @@ python 软件设计
 
 
 ```
- [改造前代码](./03_observer_pattern/obs_before.py)   --> [改造后代码](./03_observer_pattern/obs_after.py)
+ [改造前代码](./04_template_pattern/before.py)   --> [改造后代码](./04_template_pattern/after.py)
+
+
+### 五 桥接模式
+```
+在软件开发时，如果某个类存在两个独立变化的维度，可以运用桥接模式将这两个维度分离出来，使两者可以独立扩展，让系统更加符合“单一职责原则”。
+```
+ [改造前代码](./04_template_pattern/after.py)   --> [改造后代码](./04_template_pattern/after_with_bridge.py))
+
+
+
+
+### 六 MVC
+```
+在软件开发时，如果某个类存在两个独立变化的维度，可以运用桥接模式将这两个维度分离出来，使两者可以独立扩展，让系统更加符合“单一职责原则”。
+```
+ [改造前代码](./04_template_pattern/after.py)   --> [改造后代码](./04_template_pattern/after_with_bridge.py))
+
+
+
+
+ ---
+
+
+### 关于python相关
+
+### 一 异常处理
+```
+python 所有的异常都是Exception的子类，整体呈树结构
+
+tips:
+    1 不要随意抛出没有意义的异常 如随意抛出  ValueError。
+    2 python可以使用finally做额外的工作 如 关闭文件句柄。也可以使用上下文管理器。
+    3 在正确的层级处理异常，而不是把异常一直往上层抛出。
+    4 python 在运行代码和解释代码都使用异常来报告错误 如果你捕获的是Exception 那么你代码的问题也会被掩盖。只处理你知道该怎么做的错误。 
+```
+[demo](./python_exception_handing/error_handling.py) 
+
+#### python异常处理高级应用
+
+[基于异常处理的重试装饰器](./python_exception_handing/retry-decorator.py) 
+[基于异常处理的记录装饰器](./python_exception_handing/logging-decorator.py) 
+
+####  链式错误处理 
+
+[demo](./python_exception_handing/example.py) 
+
+### 
