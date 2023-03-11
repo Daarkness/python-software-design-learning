@@ -20,6 +20,7 @@ class Authorizer_SMS:
 
     def authorize(self):
         code = input("Enter SMS code: ")
+        print("===>",code,self.code)
         self.authorized = code == self.code
 
     def is_authorized(self) -> bool:
@@ -29,13 +30,16 @@ class PaymentProcessor:
 
     def __init__(self,authorizer:Authorizer_SMS) -> None:
         self.authorizer =  authorizer
+
+    def send_sms_code(self):
+        self.authorizer.generate_sms_code()
+        print("send code to user ...")
+
+ 
     
     def pay(self, order):
-        self.authorizer.generate_sms_code()
         self.authorizer.authorize()
         if not self.authorizer.is_authorized():
             raise Exception("Not authorized")
         print(f"Processing payment for order with id {order.id}")
         order.set_status("paid")
-
- ß

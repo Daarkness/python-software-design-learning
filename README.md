@@ -72,7 +72,7 @@ MVC不是一种设计模式，MVC是一种架构模式。是软件体系架构�
 1 单一职责原则（Single Responsibility Principle） 每一个类应该专注于做一件事情。
 2 开闭原则（Open Close Principle）面向扩展开放，面向修改关闭。
 3 里氏替换原则（Liskov Substitution Principle）超类存在的地方，子类是可以替换的。
-4 （Interface Segregation Principle）应当为客户端提供尽可能小的单独的接口，而不是提供大的总的接口。
+4 借口隔离（Interface Segregation Principle）应当为客户端提供尽可能小的单独的接口，而不是提供大的总的接口。
 5 依赖倒置原则（Dependence Inversion Principle） 实现尽量依赖抽象，不依赖具体实现。
 
 ```
@@ -90,14 +90,26 @@ MVC不是一种设计模式，MVC是一种架构模式。是软件体系架构�
 依赖注入：如果一个类使用某种类型的对象，并不是让该类负责创建对象，把创建这个类的责任转移给另外一个类
     优点：让代码变得容易测试
 ```
-- 依赖反转:[改造前代码](./07_principle/single-responsibility-before.py) [改造测试代码](./07_principle/single-responsibility-after.py)
 - 依赖注入:
     ```
     在使用以来注入之前，我们没有办法pay方法编写测试用例
     ```
-    [改造前代码](./08_dependency_inversion%26dependency_injection/before.py) [改造前测试代码](./08_dependency_inversion%26dependency_injection/before_test.py)-->
-    [改造后代码](./08_dependency_inversion%26dependency_injection/before.py) [改造后测试代码](./07_principle/open-closed-after.py)
- 
+    [改造前代码](./08_dependency_inversion_dependency_injection/before.py) [改造前测试代码](./08_dependency_inversion_dependency_injection/before_test.py)-->
+    [改造后代码](./08_dependency_inversion_dependency_injection/dependency_injection.py) [改造后测试代码](./08_dependency_inversion_dependency_injection/dependency_injection_test.py)
+
+- 依赖反转
+    [改造前代码](./08_dependency_inversion_dependency_injection/dependency_injection.py) [改造钱测试代码](./08_dependency_inversion_dependency_injection/dependency_injection_test.py) -->
+    [改造后代码](./08_dependency_inversion_dependency_injection/dependency_inversion.py) [改造后测试代码](./08_dependency_inversion_dependency_injection/dependency_inversion_test.py)
+
+
+### 九 继承还是组合？
+
+
+
+
+
+
+
 ---
 ### 关于python相关
 

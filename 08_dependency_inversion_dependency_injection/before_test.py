@@ -45,7 +45,6 @@ class Authorizer_SMS_TestCase(unittest.TestCase):
 
 
 class PaymentProcessor_TestCase(unittest.TestCase):
-
     def test_payment_success(self):
         # ???
         self.assertTrue(True)
