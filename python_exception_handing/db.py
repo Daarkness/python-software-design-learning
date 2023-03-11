@@ -61,3 +61,4 @@ def fetch_blog(id: str):
         print("Closing the database")
         # close the database
         con.close()
+ 

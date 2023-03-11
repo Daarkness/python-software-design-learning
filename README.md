@@ -13,7 +13,7 @@ python 软件设计
 ### 一 依赖反转
 
 ```
-高层次的模块不应该依赖于低层次的模块** ，两者都应该依赖于抽象接口
+高层次的模块不应该依赖于低层次的模块 ，两者都应该依赖于抽象接口
 抽象接口不应该依赖于具体实现。而具体实现则应该依赖于抽象接口
 
 ```
@@ -44,19 +44,17 @@ python 软件设计
 ### 四 模版方法
 ```
 一个抽象类中，有一个主方法，再定义1…n个方法，可以是抽象的，也可以是实际的方法，定义一个类，继承该抽象类，重写抽象方法，通过调用抽象类，实现对子类的调用。
-
+ 
 
 ```
- [改造前代码](./04_template_pattern/before.py)   --> [改造后代码](./04_template_pattern/after.py)
+ [改造前代码](./04_05_template_pattern/before.py)   --> [改造后代码](./04_05_template_pattern/after.py)
 
 
 ### 五 桥接模式
 ```
 在软件开发时，如果某个类存在两个独立变化的维度，可以运用桥接模式将这两个维度分离出来，使两者可以独立扩展，让系统更加符合“单一职责原则”。
 ```
- [改造前代码](./04_template_pattern/after.py)   --> [改造后代码](./04_template_pattern/after_with_bridge.py))
-
-
+ [改造前代码](./04_05_template_pattern/after.py)   --> [改造后代码](./04_05_template_pattern/after_with_bridge.py))
 
 
 ### 六 MVC
@@ -65,23 +63,42 @@ MVC主要作用是降低了视图与业务逻辑间的双向偶合。
 MVC不是一种设计模式，MVC是一种架构模式。是软件体系架构的内容
 只在于节藕view和业务之间双向耦合
 ```
- [改造前代码](./04_template_pattern/after.py)   --> [改造后代码](./04_template_pattern/after_with_bridge.py))
+ [改造前代码](./06_mvc/before.py)   --> [改造后代码](./06_mvc/after.py))
 
-### 七 借口分离和依赖反转
+
+
+### 七 面向对象五大原则
 ```
-MVC主要作用是降低了视图与业务逻辑间的双向偶合。
-MVC不是一种设计模式，MVC是一种架构模式。是软件体系架构的内容
-只在于节藕view和业务之间双向耦合
+1 单一职责原则（Single Responsibility Principle） 每一个类应该专注于做一件事情。
+2 开闭原则（Open Close Principle）面向扩展开放，面向修改关闭。
+3 里氏替换原则（Liskov Substitution Principle）超类存在的地方，子类是可以替换的。
+4 （Interface Segregation Principle）应当为客户端提供尽可能小的单独的接口，而不是提供大的总的接口。
+5 依赖倒置原则（Dependence Inversion Principle） 实现尽量依赖抽象，不依赖具体实现。
+
 ```
- [改造前代码](./04_template_pattern/after.py)   --> [改造后代码](./04_template_pattern/after_with_bridge.py))
+- 单一职责原则:[改造前代码](./07_principle/single-responsibility-before.py)   --> [改造后代码](./07_principle/single-responsibility-after.py)
+- 开闭原则:[改造前代码](./07_principle/open-closed-before.py)   --> [改造后代码](./07_principle/open-closed-after.py)
+- 里氏替换原则: [改造前代码](./07_principle/liskov-substitution-before.py)   --> [改造后代码](./07_principle/liskov-substitution-after.py)
+- 接口隔离原则: [改造前代码](./07_principle/interface-segregation-before.py)   --> [改造后代码](./07_principle/interface-segregation-after.py) 
+    -->[使用组合改造后代码](./07_principle/interface-segregation-after-comp.py) 
+- 依赖倒置原则: [改造前代码]()   --> [改造后代码]()
 
-
- ---
-
-
-
-
-
+### 八 依赖反转对比依赖注入
+```
+依赖反转：抽象接口不应该依赖于具体实现。而具体实现则应该依赖于抽象接口
+    是一个原则，设计原则的一部分 解耦合具体的类
+依赖注入：如果一个类使用某种类型的对象，并不是让该类负责创建对象，把创建这个类的责任转移给另外一个类
+    优点：让代码变得容易测试
+```
+- 依赖反转:[改造前代码](./07_principle/single-responsibility-before.py) [改造测试代码](./07_principle/single-responsibility-after.py)
+- 依赖注入:
+    ```
+    在使用以来注入之前，我们没有办法pay方法编写测试用例
+    ```
+    [改造前代码](./08_dependency_inversion%26dependency_injection/before.py) [改造前测试代码](./08_dependency_inversion%26dependency_injection/before_test.py)-->
+    [改造后代码](./08_dependency_inversion%26dependency_injection/before.py) [改造后测试代码](./07_principle/open-closed-after.py)
+ 
+---
 ### 关于python相关
 
 ### 一 异常处理
@@ -94,7 +111,7 @@ tips:
     3 在正确的层级处理异常，而不是把异常一直往上层抛出。
     4 python 在运行代码和解释代码都使用异常来报告错误 如果你捕获的是Exception 那么你代码的问题也会被掩盖。只处理你知道该怎么做的错误。 
 ```
-[demo](./python_exception_handing/error_handling.py) 
+[错误处理](./python_exception_handing/error_handling.py) 
 
 #### python异常处理高级应用
 
@@ -102,7 +119,11 @@ tips:
 [基于异常处理的记录装饰器](./python_exception_handing/logging-decorator.py) 
 
 ####  链式错误处理 
+[code:链式错误处理](./python_exception_handing/example.py) 
 
-[demo](./python_exception_handing/example.py) 
+
+
+### 二对象创建
+
 
 ### 

@@ -19,7 +19,7 @@ def get_blog(id):
         abort(404, description="Resource not found")
     except NotAuthorizedError:
         abort(403, description="Access denied")
-
+    
 
 
 
